@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+    background-color: black;
+}
+.logo-hand {
+    width: 40px;
+    height:auto;
+}
+.logo-one {
+    width: 200px;
+    height:auto;
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+
+}
+.buttons-header {
+    font-size: 15px;
+    padding: 10px 15px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.buttons-header:hover {
+    border-color:#ff0044;
+}
