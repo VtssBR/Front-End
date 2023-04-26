@@ -1,3 +1,5 @@
+const vagas= []
+
 function Menu(){
     opcao = prompt("Escolha uma das opçoes: \n"+
     "1- Listar  vagas diponiveis\n"+
@@ -9,18 +11,31 @@ function Menu(){
     return opcao
 }
 
-const vagas= {}
-
 function listar(){
-    alert({
-        indice,
-        nome,
-        quantidade
-    })
-}
+    const vagasEmtexto = vagas.reduce(function (textoFinal, vaga, indice){
+        textoFinal += indice + "- "
+        textoFinal += vaga.nome
+        textoFinal +=" (" + vaga.candidatos.length + "candidatos)\n"
+        return textoFinal
+    }, "")
 
-vagas.forEach(listar)
+    alert(vagasEmtexto)
+} 
+    
 
-function Criar(){
-    nome = prompt()
+
+function criar(){
+    const nome = prompt("Insira um titulo para vaga: \n")
+    const descricao = prompt("Insira uma descrição para a vaga: \n")
+    const data = prompt("Insira a data limite: \n")
+    const confirmacao= confirm(
+        "Deseja confirmar os dados ?:\n" +
+        "Nome: " + nome + "\nDescrição: " + descricao + "\nData limite: " + data
+    )
+    
+    if (confirmacao) {
+        const novaVaga = {nome, descricao, data, candidatos: []}
+        vagas.push(novaVaga)
+        alert("Vaga criada com sucesso")
+    }  
 }
