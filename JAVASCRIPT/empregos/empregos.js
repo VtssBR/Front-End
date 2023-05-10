@@ -43,6 +43,11 @@ function criar(){
 
 function visualizar(){
     const indice = prompt("Insira o indice da vaga para busca-la: \n")
+    if(indice >= vagas.length || indice < 0) {
+        alert("Indice Invalido")
+        return
+    }
+
     const vaga = vagas[indice]
     const candidatosEmTexto = vagas.candidatos.reduce(function(textoFinal, candidato){
         return textoFinal + "\n - " + candidato
